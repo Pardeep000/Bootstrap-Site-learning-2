@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;    
+}
+/* navigation whole class */
+.navClass{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.navClass_onScroll{    
+    background-color: rgba(255, 255, 255,0.6);
+    box-shadow: 0px 5px 50px 5px rgba(168, 165, 165,0.8);
+
+}
+.navItems{
+    padding-left: 60vh;    
+}
+.navItems ul li a{
+    margin: 0 5px;
+    padding: 0;
+    /* background-color: orange; */
+    border-radius: 15px;
+}
+.navItems ul li a:hover{
+    color: white;
+    background-color: aqua;
+    transition: all .4s ease-out 0s;
+}
+.nav-link{
+    font-weight: 600;
+    color: brown;
+}
+
+.logo{
+    position: relative;
+    top: -5;
+    border-radius:100px;
+    /* rotating logo */
+    animation: rotation 4s infinite linear;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+
+/* button attributes */
+.main_btn{      
+    border: 2px solid brown;
+    padding: 3px 7px;
+    
+}
+.main_btn:hover{
+    background-color: brown;
+    color: white;
+}
+.btn_position{
+  position: relative;
+  top: -4px;
+}
+
+
+.white_btn{
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 3px;
+    box-shadow: 4px 4px 4px 0px grey;
+    /* rgb(0,0,0/19%) */
+    padding: 3px 7px;
+}
+.white_btn:hover{
+    background-color: brown;
+    color: white;
+}
+
+/* customized scrollbar */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: brown; 
+    border-radius: 10px;
+  }
+
+/* body sections */
+.section1{
+    /* background-color: aqua; */
+    min-height: 30vh;
+}
+
+h1{
+    color: brown;
+}
+/* p{
+font-family: 'Kanit', sans-serif;
+font-family: 'Lobster', cursive;
+} */
+
+
+.typed-out{
+    width: 0;
+    overflow: hidden;
+    border-right: 5px solid orange;
+    white-space: nowrap;
+    animation: typing 4s infinite forwards;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Lobster', cursive;
+  }
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+
+
+/* section2 class */
+.section2Container{
+    background-color: blue;
+    padding: 5% 0;
+}
+
+.section2Container div{
+    color: white;
+}
+.section2Container div h2{
+    padding-left: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:995px){
+    .navItems{
+        padding-left: 0;
+    }
+    .navClass{
+        /* background-color: white; */
+        min-height: 0;
+    }
+    .navbar-nav-scroll{
+        background-color: aqua;
+        border-radius: 15px;        
+        text-align: center;
+        width: 100%;
+        padding: 0px 25%;
+
+    }
+    .section1Container{
+        padding: 37vh 0 25vh;
+    }
+}

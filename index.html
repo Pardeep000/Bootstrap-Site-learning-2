@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,300&family=Lobster&display=swap"
+        rel="stylesheet">
+    <!-- font awesome cdn Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- css link -->
+    <link rel="stylesheet" href="css/index_style.css">
+    <style>
+        .section1Container {
+            background-image: url('images/sectionbg.jpg');
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+            padding: 37vh 0 15vh;
+        }
+
+        /* .defaultmark{
+            background-color: blue;
+        } */
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function counter(id, start, end) {
+                let data = document.querySelector(id),
+                    current = start,
+                    increment = end > start ? 1 : -1,
+                    timer = setInterval(function () {
+                        current += increment,
+                            data.innerHTML = current;
+                        if (current == end) {
+                            clearInterval(timer);
+                        }
+                    }, 10);
+            }
+            console.log("ending has been done");
+            counter(".count1", 0, 784);
+            counter(".count2", 0, 468);
+            counter(".count3", 0, 983);
+            counter(".count4", 0, 485);
+            //
+            //for changing navbar properties on scrolling
+            window.onscroll = function () {
+                let d = document.querySelector(".navClass");
+                // console.log(`test=> ${document.documentElement.scrollTop}`);
+                if (document.documentElement.scrollTop > 156) {
+                    d.classList.add("navClass_onScroll");
+                }
+                else {
+                    d.classList.remove("navClass_onScroll");
+                }
+            };
+            //defaultmark
+            let defaultmark = document.querySelector(".defaultmark");
+            defaultmark.style.backgroundColor = "#0d6efd";
+            //for navbar
+            let navlinks = document.querySelectorAll(".nav-link");
+            let navCollapse = document.querySelector(".collapse.navbar-collapse");
+            //clicking function
+            navlinks.forEach(function (e) {
+                e.onclick = function () {
+                    navCollapse.classList.remove("show");
+                    //
+                    //removing all active links from all
+                    // console.log(`length=>${navlinks.length}`);
+                    for (var i = 0; i < navlinks.length; i++) {
+                        navlinks[i].style.backgroundColor = "";
+                    }
+                    //now adding to the one which is clicked
+                    console.log(`clicked on ${e.innerHTML}`);
+                    e.style.backgroundColor = "#0d6efd";
+                    //
+                }
+            });
+            //
+
+            //end
+        });
+    </script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <!-- Working begins from this point -->
+    <!-- navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg  navClass">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img class="logo" src="/images/logo.jpg" alt="" width="130" height="130">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navItems" id="navbarScroll">
+                    <ul class="nav navbar-nav">
+                        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                            style="--bs-scroll-height: 100px;">
+                            <li class="nav-item">
+                                <a class="nav-link defaultmark" aria-current="page" href="#home">Home</a>
+                                <!-- navbar-nav-scroll -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Explore Foods</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Reviews</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">FAQs</a>
+                            </li>
+                            <!-- <li><button class="btn btn-outline-danger border rounded-0 border-dark border-2">1200 345654</button></li> -->
+                            <li><button class="main_btn btn_position">1200 345 654</button></li>
+                        </ul>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- body sections -->
+    <section class="section1" id="home">
+        <div class="container-fluid px-0 section1Container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-5">
+                        <h1>Georgian Food and Wine Experience in San Francisco Bay Area</h1>
+                        <p class="mt-5 typed-out">A recipe has no soul. We, as the cook, brings soul to the recipe with
+                            our roots, which has<br>culture, history, story and especially relationships.</p>
+                        <div class="mt-4 mb-4">
+                            <button class="main_btn">Order Now <i class="fas fa-shopping-basket"></i></i></button>
+                            <button class="white_btn">Book Table <i class="fas fa-angle-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section2 -->
+    <section id="about">
+        <div class="container-fluid px-0 section2Container">
+            <div class="container d-flex text-center">
+                <div class="col-3">
+                    <h2><span class="count1"></span>+</h2>
+                    <p>Clients</p>
+                </div>
+                <div class="col-3">
+                    <h2><span class="count2"></span>+</h2>
+                    <p>Orders</p>
+                </div>
+                <div class="col-3">
+                    <h2><span class="count3"></span>+</h2>
+                    <p>Online-Serving</p>
+                </div>
+                <div class="col-3">
+                    <h2><span class="count4"></span>+</h2>
+                    <p>Savings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
